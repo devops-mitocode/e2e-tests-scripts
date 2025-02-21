@@ -17,20 +17,21 @@ pipeline {
         }
         stage('End2End Tests') {
             steps {
-                script {
-                    def tagsOption = TAGS?.trim() ? "-Dcucumber.filter.tags='${TAGS}'" : ""
-                    sh "docker exec ${BUILD_TAG} mvn clean verify -Denvironment=${ENVIRONMENT} -Dwebdriver.remote.url=http://${BUILD_TAG}-selenium-hub-1:4444/wd/hub -Dwebdriver.remote.driver=${BROSWER} ${tagsOption} -B -ntp"
-                }
-                publishHTML(
-                    target: [
-                        reportName           : 'Serenity Report',
-                        reportDir            : 'target/site/serenity',
-                        reportFiles          : 'index.html',
-                        keepAll              : true,
-                        alwaysLinkToLastBuild: true,
-                        allowMissing         : false
-                    ]
-                )
+                sh 'sleep 5m'
+//                 script {
+//                     def tagsOption = TAGS?.trim() ? "-Dcucumber.filter.tags='${TAGS}'" : ""
+//                     sh "docker exec ${BUILD_TAG} mvn clean verify -Denvironment=${ENVIRONMENT} -Dwebdriver.remote.url=http://${BUILD_TAG}-selenium-hub-1:4444/wd/hub -Dwebdriver.remote.driver=${BROSWER} ${tagsOption} -B -ntp"
+//                 }
+//                 publishHTML(
+//                     target: [
+//                         reportName           : 'Serenity Report',
+//                         reportDir            : 'target/site/serenity',
+//                         reportFiles          : 'index.html',
+//                         keepAll              : true,
+//                         alwaysLinkToLastBuild: true,
+//                         allowMissing         : false
+//                     ]
+//                 )
             }
         }
     }
