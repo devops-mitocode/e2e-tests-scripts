@@ -8,18 +8,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 
-import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class OwnerPage extends PageObject {
 
     // List owners
-//    @FindBy(xpath = "/html/body/app-root/div[1]/nav/div/ul/li[2]/a")
     @FindBy(xpath = "//a[contains(text(), 'Owners')]")
     WebElementFacade ownerMenu;
 
-//    @FindBy(xpath = "/html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a")
     @FindBy(css = "a[routerlink='/owners']")
     WebElementFacade ownerSearchOptionMenu;
 

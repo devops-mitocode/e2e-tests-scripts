@@ -17,6 +17,7 @@ public class OwnersDefinitions {
 
     @Given("el cliente navega al menú propietarios")
     public void elClienteNavegaAlMenuPropietarios() {
+        ownerPage.getDriver().
         ownerPage.open();
         ownerPage.clickOnOwnerMenu();
     }
