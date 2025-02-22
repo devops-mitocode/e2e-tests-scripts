@@ -1,7 +1,6 @@
 package com.mycompany.steps;
 
 import com.mycompany.pages.owners.OwnerPage;
-import com.mycompany.utils.CDPHeaderUtil;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -18,7 +17,6 @@ public class OwnersDefinitions {
 
     @Given("el cliente navega al menú propietarios")
     public void elClienteNavegaAlMenuPropietarios() {
-        CDPHeaderUtil.applyNgrokHeader(ownerPage.getDriver());
         ownerPage.open();
         ownerPage.clickOnOwnerMenu();
     }
