@@ -2,7 +2,7 @@ package com.mycompany;
 
 import org.junit.platform.suite.api.*;
 
-import static io.cucumber.junit.platform.engine.Constants.*;
+import static io.cucumber.core.options.Constants.PLUGIN_PROPERTY_NAME;
 
 @Suite
 @IncludeEngines("cucumber")
