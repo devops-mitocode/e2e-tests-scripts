@@ -12,9 +12,9 @@ import java.util.Optional;
 public class CDPHeaderUtil {
 
     public static void applyNgrokHeader(WebDriver driver) {
-        if (!(driver instanceof ChromeDriver)) {
-            throw new IllegalArgumentException("Error: El WebDriver debe ser una instancia de ChromeDriver.");
-        }
+//        if (!(driver instanceof ChromeDriver)) {
+//            throw new IllegalArgumentException("Error: El WebDriver debe ser una instancia de ChromeDriver.");
+//        }
         DevTools devTools = ((ChromeDriver) driver).getDevTools();
         devTools.createSession();
         devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
