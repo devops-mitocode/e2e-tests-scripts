@@ -1,6 +1,7 @@
 package com.mycompany.steps;
 
 import com.mycompany.pages.pettypes.PetTypesPage;
+import com.mycompany.utils.CDPHeaderUtil;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -13,6 +14,7 @@ public class PetTypesDefinitions {
 
     @When("el cliente selecciona la opción listar de tipos de mascotas")
     public void el_cliente_selecciona_la_opcion_listar_de_tipos_de_mascotas() {
+        CDPHeaderUtil.applyNgrokHeader(petTypesPage.getDriver());
         petTypesPage.open();
         petTypesPage.clickOnPetTypesMenu();
     }
