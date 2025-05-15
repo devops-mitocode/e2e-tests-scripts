@@ -14,10 +14,12 @@ import java.util.List;
 public class OwnerPage extends PageObject {
 
     // List owners
-    @FindBy(xpath = "//a[contains(text(), 'Owners')]")
+//    @FindBy(xpath = "//a[contains(text(), 'Owners')]")
+    @FindBy(xpath = "//a[contains(text(), 'Find owners')]")
     WebElementFacade ownerMenu;
 
-    @FindBy(css = "a[routerlink='/owners']")
+//    @FindBy(css = "a[routerlink='/owners']")
+    @FindBy(xpath = "//button[contains(text(), 'Find Owner')]")
     WebElementFacade ownerSearchOptionMenu;
 
     @FindBy(id = "ownersTable")
