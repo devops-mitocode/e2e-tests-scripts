@@ -10,7 +10,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <serenity.version>4.2.8</serenity.version>
+    <serenity.version>4.2.23</serenity.version>
     <junit-platform-suite.version>1.11.4</junit-platform-suite.version>
     <maven.compiler.plugin.version>3.12.1</maven.compiler.plugin.version>
     <maven.compiler.source>17</maven.compiler.source>
