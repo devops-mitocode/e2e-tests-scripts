@@ -60,8 +60,13 @@ public class OwnersDefinitions {
         ownerPage.scrollToBottom();
         String firstName = Serenity.sessionVariableCalled("firstName");
         String lastName = Serenity.sessionVariableCalled("lastName");
+        String address = Serenity.sessionVariableCalled("address");
+        String city = Serenity.sessionVariableCalled("city");
+        String telephone = Serenity.sessionVariableCalled("telephone");
         String fullName = firstName + " " + lastName;
-        assertEquals(fullName, ownerPage.getFullName());
-        assertThat(ownerPage.getFullName()).isEqualTo(fullName);
+        assertEquals(fullName, ownerPage.getOwnerInformationValue("name"));
+        assertEquals(address, ownerPage.getOwnerInformationValue("address"));
+        assertEquals(city, ownerPage.getOwnerInformationValue("city"));
+        assertEquals(telephone, ownerPage.getOwnerInformationValue("telephone"));
     }
 }

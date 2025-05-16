@@ -14,11 +14,9 @@ import java.util.List;
 public class OwnerPage extends PageObject {
 
     // List owners
-//    @FindBy(xpath = "//a[contains(text(), 'Owners')]")
     @FindBy(xpath = "//*[@id=\"main-navbar\"]/ul/li[2]/a")
     WebElementFacade ownerMenu;
 
-//    @FindBy(css = "a[routerlink='/owners']")
     @FindBy(xpath = "//*[@id=\"search-owner-form\"]/div[2]/div/button")
     WebElementFacade ownerSearchOptionMenu;
 
@@ -26,7 +24,6 @@ public class OwnerPage extends PageObject {
     WebElementFacade ownersTable;
 
     // Add owner
-//    @FindBy(xpath = "/html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[2]/a")
     @FindBy(xpath = "/html/body/div/div/a")
     WebElementFacade addOwnerButtonOption;
 
@@ -45,9 +42,11 @@ public class OwnerPage extends PageObject {
     @FindBy(id = "telephone")
     WebElementFacade telephoneField;
 
-//    @FindBy(xpath = "/html/body/app-root/div[2]/app-owner-add/div/div/form/div[7]/div/button[2]")
     @FindBy(xpath = "//*[@id=\"add-owner-form\"]/div[2]/div/button")
     WebElementFacade addOwnerButton;
+
+    @FindBy(xpath = "/html/body/div/div/table[1]")
+    WebElementFacade ownersInformationTable;
 
     public void clickOnOwnerMenu() {
         ownerMenu.waitUntilVisible().waitUntilClickable().click();
@@ -58,7 +57,7 @@ public class OwnerPage extends PageObject {
     }
 
     public int getOwnersTableRowsCount() {
-        return getTableRows().size();
+        return getOwnerTableRows().size();
     }
 
     // Add Owner
@@ -108,15 +107,25 @@ public class OwnerPage extends PageObject {
         actions.sendKeys(Keys.END).perform();
     }
 
-    public String getFullName() {
-        List<WebElementFacade> rows = getTableRows();
-        WebElementFacade lastRow = rows.get(rows.size()-1);
-        return lastRow.findElement(By.cssSelector("td a")).getText();
+    public String getOwnerInformationValue(String header) {
+        List<WebElementFacade> rows = getOwnerInformationTableRows();
+        for (WebElementFacade row : rows) {
+            WebElementFacade th = row.find(By.tagName("th"));
+            if (th.getText().equalsIgnoreCase(header)) {
+                return row.find(By.tagName("td")).getText();
+            }
+        }
+        return null;
     }
 
-    private List<WebElementFacade> getTableRows() {
+    private List<WebElementFacade> getOwnerTableRows() {
         waitFor(ownersTable).shouldBeVisible();
 //        waitFor(ownersTable).withTimeoutOf(Duration.ofSeconds(20)).shouldBeVisible();
         return ownersTable.thenFindAll("tbody tr");
+    }
+
+    private List<WebElementFacade> getOwnerInformationTableRows() {
+        waitFor(ownersInformationTable).shouldBeVisible();
+        return ownersInformationTable.thenFindAll("tbody tr");
     }
 }
