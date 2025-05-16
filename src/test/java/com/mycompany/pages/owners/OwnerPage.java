@@ -26,7 +26,8 @@ public class OwnerPage extends PageObject {
     WebElementFacade ownersTable;
 
     // Add owner
-    @FindBy(xpath = "/html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[2]/a")
+//    @FindBy(xpath = "/html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[2]/a")
+    @FindBy(xpath = "/html/body/div/div/a")
     WebElementFacade addOwnerButtonOption;
 
     @FindBy(id = "firstName")
