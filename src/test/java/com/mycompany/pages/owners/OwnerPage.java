@@ -45,7 +45,8 @@ public class OwnerPage extends PageObject {
     @FindBy(id = "telephone")
     WebElementFacade telephoneField;
 
-    @FindBy(xpath = "/html/body/app-root/div[2]/app-owner-add/div/div/form/div[7]/div/button[2]")
+//    @FindBy(xpath = "/html/body/app-root/div[2]/app-owner-add/div/div/form/div[7]/div/button[2]")
+    @FindBy(xpath = "//*[@id=\"add-owner-form\"]/div[2]/div/button")
     WebElementFacade addOwnerButton;
 
     public void clickOnOwnerMenu() {
