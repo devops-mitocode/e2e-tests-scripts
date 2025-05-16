@@ -15,11 +15,11 @@ public class OwnerPage extends PageObject {
 
     // List owners
 //    @FindBy(xpath = "//a[contains(text(), 'Owners')]")
-    @FindBy(xpath = "//a[contains(text(), 'Find owners')]")
+    @FindBy(xpath = "//*[@id=\"main-navbar\"]/ul/li[2]/a")
     WebElementFacade ownerMenu;
 
 //    @FindBy(css = "a[routerlink='/owners']")
-    @FindBy(xpath = "//button[contains(text(), 'Find Owner')]")
+    @FindBy(xpath = "//*[@id=\"search-owner-form\"]/div[2]/div/button")
     WebElementFacade ownerSearchOptionMenu;
 
     @FindBy(id = "ownersTable")
