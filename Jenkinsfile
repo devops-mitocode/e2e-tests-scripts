@@ -23,7 +23,7 @@ pipeline {
                 }
                 publishHTML(
                     target: [
-                        reportName           : 'Serenity Report',
+                        reportName           : 'E2E Tests Report',
                         reportDir            : 'target/site/serenity',
                         reportFiles          : 'index.html',
                         keepAll              : true,
