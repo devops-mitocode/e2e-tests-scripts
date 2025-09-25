@@ -11,7 +11,7 @@ services:
     working_dir: ${WORKSPACE}
 
   chrome:
-    image: selenium/node-chrome:4.32.0-20250505
+    image: selenium/node-chrome:4.35.0-20250828
     platform: linux/amd64
     shm_size: 2gb
     depends_on:
@@ -20,7 +20,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
 
   edge:
-    image: selenium/node-edge:4.32.0-20250505
+    image: selenium/node-edge:4.35.0-20250828
     platform: linux/amd64
     shm_size: 2gb
     depends_on:
@@ -29,7 +29,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
 
   firefox:
-    image: selenium/node-firefox:4.32.0-20250505
+    image: selenium/node-firefox:4.35.0-20250828
     shm_size: 2gb
     depends_on:
       - selenium-hub
@@ -37,7 +37,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
 
   selenium-hub:
-    image: selenium/hub:4.32.0-20250505
+    image: selenium/hub:4.35.0-20250828
 #    container_name: selenium-hub
 #    ports:
 #      - "4442:4442"
